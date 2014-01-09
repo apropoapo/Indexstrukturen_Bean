@@ -11,5 +11,8 @@ package indexstrukturen_bean;
  * @author blub
  */
 public class einfacherPraefix_B_plus_Baum {
-    
+    //hallo
+    public einfacherPraefix_B_plus_Baum(){
+        
+    }
 }
