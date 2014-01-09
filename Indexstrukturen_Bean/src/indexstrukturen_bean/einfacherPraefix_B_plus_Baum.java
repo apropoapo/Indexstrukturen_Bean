@@ -10,9 +10,14 @@ package indexstrukturen_bean;
  *
  * @author blub
  */
-public class einfacherPraefix_B_plus_Baum {
-    //hallo
-    public einfacherPraefix_B_plus_Baum(){
+public class einfacherPraefix_B_plus_Baum<T extends Comparable> {
+    private int m;
+    Knoten wurzel;
+    public einfacherPraefix_B_plus_Baum(int m){
         
+    }
+    
+    public boolean addWert(){
+        return false;
     }
 }
