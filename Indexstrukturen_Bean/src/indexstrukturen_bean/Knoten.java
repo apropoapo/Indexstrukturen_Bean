@@ -12,12 +12,14 @@ import java.util.LinkedList;
  * @author blub
  */
 abstract class Knoten<T extends Comparable> {
+
     private T max, min;
     private int m;
     private LinkedList<T> werteList;
 
     public Knoten(int m, T wert) {
-        this.werteList.add(wert);
+        werteList = new LinkedList<T>();
+        this.werteList.addFirst(wert);
         this.m = m;
         this.max = wert;
         this.min = wert;
@@ -44,10 +46,10 @@ abstract class Knoten<T extends Comparable> {
                     found = true;
                     max = wert;
                 }
-                
+
             }
             werteList.add(i, wert);
-            if (i == 0){
+            if (i == 0) {
                 min = wert;
             }
             return true;
@@ -76,19 +78,23 @@ abstract class Knoten<T extends Comparable> {
     public int getSize() {
         return this.werteList.size();
     }
-    public T getMin(){
+
+    public T getMin() {
         return min;
     }
 
-    public T getMax(){
+    public T getMax() {
         return max;
-    }    
-    
-    public void paintNode(int hoehe){ //male Knoten
-        for (int i=0; i<hoehe; i++){
+    }
+
+    public void paintNode(int hoehe) { //male Knoten
+        System.out.print(hoehe +" ");
+        for (int i = 0; i < hoehe; i++) {
             System.out.print("      ");
         }
-        for (int i=0; i < werteList.size(); i++)
-        System.out.println(werteList.get(i) + "  ");
+        for (int i = 0; i < werteList.size(); i++) {
+            System.out.print(werteList.get(i) + "  ");
+        }
+        System.out.println();
     }
 }

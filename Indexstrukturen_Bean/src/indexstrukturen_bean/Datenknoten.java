@@ -12,6 +12,7 @@ package indexstrukturen_bean;
  */
 public class Datenknoten<T extends Comparable> extends Knoten<T>{
     private Datenknoten next;
+    
     public Datenknoten(int m, T wert){
         super(m, wert);
         

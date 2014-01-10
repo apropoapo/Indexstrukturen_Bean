@@ -16,8 +16,13 @@ public class DirectoryKnoten<T extends Comparable> extends Knoten<T>{
     LinkedList<Knoten> pointer;
     public DirectoryKnoten(int m, T wert, Knoten left, Knoten right){
         super(m, wert);
+        pointer = new LinkedList<Knoten>();
         pointer.addLast(left);
         pointer.addLast(right);
     }
     
+    public LinkedList<Knoten> getPointer(){
+        return pointer;
+    }
+
 }

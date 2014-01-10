@@ -16,7 +16,10 @@ public class Indexstrukturen_Bean {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Datenknoten<String> dk = new Datenknoten<String>(2, "hallo");
+        //dk.paintNode(2);
+        einfacherPraefix_B_plus_Baum<String> baum = new einfacherPraefix_B_plus_Baum<String>(2, "hallo");
+        baum.paint();
     }
     
 }
