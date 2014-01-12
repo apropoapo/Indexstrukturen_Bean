@@ -30,31 +30,41 @@ abstract class Knoten<T extends Comparable> {
     }
 
     public boolean addWert(T wert) {
-        // nur einfügen, wenn noch Platz ist.
+        boolean result;
+        // einfügen, egal ob noch Platz ist oder nicht. false rausgeben, falls kein platz mehr war.
+        
+        
         if (werteList.size() < 2 * m) {
-            //einfügeposition suchen
-            int i = 0;
-            boolean found = false;
-            while (!found) {
-                if (werteList.get(i) != null) {
-                    if (wert.compareTo(werteList.get(i)) < 0) {
-                        i++;
-                    } else {
-                        found = true;
-                    }
+            result = true;
+        } else {
+            result=false;
+        }
+        //einfügeposition suchen
+        int i = 0;
+        boolean found = false;
+        while (!found) {
+            if (i < werteList.size()) { // Index in Bound?
+                if (wert.compareTo(werteList.get(i)) > 0) {
+                    i++;
                 } else {
                     found = true;
-                    max = wert;
                 }
+            } else {
+                found = true;
+                max = wert;
+            }
 
-            }
-            werteList.add(i, wert);
-            if (i == 0) {
-                min = wert;
-            }
-            return true;
         }
-        return false;
+        werteList.add(i, wert);
+        if (i == 0) {
+            min = wert;
+        }
+        System.out.print("im Knoten, addWerte, Knoteninhalt: ");
+        for (int j=0; j<werteList.size(); j++){
+             System.out.print( werteList.get(j)+ " "); // #### TEST
+        }
+        System.out.println();
+        return result;
     }
 
     public boolean removeWert(T wert) {
@@ -88,13 +98,14 @@ abstract class Knoten<T extends Comparable> {
     }
 
     public void paintNode(int hoehe) { //male Knoten
-        System.out.print(hoehe +" ");
+        System.out.print(hoehe + " ");
         for (int i = 0; i < hoehe; i++) {
             System.out.print("      ");
         }
+        System.out.print("| ");
         for (int i = 0; i < werteList.size(); i++) {
             System.out.print(werteList.get(i) + "  ");
         }
-        System.out.println();
+        System.out.print(" |");
     }
 }

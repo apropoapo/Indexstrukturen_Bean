@@ -21,8 +21,26 @@ public class DirectoryKnoten<T extends Comparable> extends Knoten<T>{
         pointer.addLast(right);
     }
     
+    public DirectoryKnoten(int m, T wert){
+        super(m, wert);
+        pointer = new LinkedList<Knoten>();
+
+    }
+    
     public LinkedList<Knoten> getPointer(){
         return pointer;
+    }
+    
+    public void setPointer(int position, Knoten knoten){
+        pointer.add(position, knoten);
+    }
+    
+    public void addLastPointer(Knoten knoten){
+        pointer.addLast(knoten);
+    }
+    
+    public void removePointer(int position){
+        pointer.remove(position);
     }
 
 }

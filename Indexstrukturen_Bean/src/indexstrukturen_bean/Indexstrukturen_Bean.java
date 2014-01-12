@@ -18,8 +18,17 @@ public class Indexstrukturen_Bean {
     public static void main(String[] args) {
         //Datenknoten<String> dk = new Datenknoten<String>(2, "hallo");
         //dk.paintNode(2);
-        einfacherPraefix_B_plus_Baum<String> baum = new einfacherPraefix_B_plus_Baum<String>(2, "hallo");
+        einfacherPraefix_B_plus_Baum<String> baum = new einfacherPraefix_B_plus_Baum<String>(1, "Sven");
+        
+        System.out.println("Heike einfügen: " + baum.addWert("Heike"));
+        System.out.println("Anna einfügen: " + baum.addWert("Anna")); 
+          System.out.println("Helga einfügen: " + baum.addWert("Helga"));
+           System.out.println("Zoo einfügen: " + baum.addWert("Zoo"));
+         // System.out.println("Bob einfügen: " + baum.addWert("Bob"));
+         // System.out.println("Heikz einfügen: " + baum.addWert("Heikz"));
+       // System.out.println("Anke einfügen: " + baum.addWert("Anke"));
         baum.paint();
+        
     }
     
 }
